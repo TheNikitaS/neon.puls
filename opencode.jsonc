@@ -1,0 +1,96 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "openwork-browser": {
+      "type": "remote",
+      "url": "http://127.0.0.1:64883/mcp?ws=D%3A%5C%D0%9D%D0%B5%D0%BE%D0%BD.%D0%9F%D1%83%D0%BB%D1%8C%D1%81",
+      "headers": {
+        "Authorization": "Bearer {env:B24_COWORK_MCP_TOKEN}"
+      }
+    },
+    "chrome": {
+      "type": "remote",
+      "url": "http://127.0.0.1:64884/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:B24_COWORK_MCP_TOKEN}"
+      }
+    },
+    "attachments": {
+      "type": "remote",
+      "url": "http://127.0.0.1:64888/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:B24_COWORK_MCP_TOKEN}"
+      }
+    },
+    "help": {
+      "type": "remote",
+      "url": "http://127.0.0.1:54299/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:B24_COWORK_MCP_TOKEN}"
+      }
+    },
+    "memory": {
+      "type": "remote",
+      "url": "http://127.0.0.1:64891/mcp/project/v1/7ePnYHwgIClmGhdj3fZSWcXZxqBtXizY1zW2FPq4prw",
+      "headers": {
+        "Authorization": "Bearer {env:B24_COWORK_MCP_TOKEN}"
+      }
+    },
+    "b24-cowork-memory": {
+      "type": "remote",
+      "url": "http://127.0.0.1:54301/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:B24_COWORK_MCP_TOKEN}"
+      }
+    }
+  },
+  "permission": {
+    "*": "allow",
+    "bitrix24_bitrix_call_confirmed": "ask",
+    "bitrix24_bitrix_update_commit_v1": "ask",
+    "bitrix24_cloud_task_forward": "ask",
+    "bitrix24_cloud_task_manage": "ask"
+  },
+  "skills": {
+    "paths": [
+      "C:\\Users\\nsuho\\.local\\share\\bitrix24-cowork\\skills",
+      "C:\\Users\\nsuho\\.local\\share\\bitrix24-cowork\\skills-code",
+      "C:\\Users\\nsuho\\AppData\\Roaming\\com.bitrixsoft.cowork\\extensions\\artifacts\\bd1b9c2b-8574-4ad7-b4f0-7d2367bf8e19\\1.0.2\\5f3a746bf1c43124ac78d770fdc9a9d5048e0b949a23032992b9d1577df4ca84\\skills"
+    ]
+  },
+  "plugin": [
+    [
+      "file:///D:/%D0%9D%D0%B5%D0%BE%D0%BD.%D0%9F%D1%83%D0%BB%D1%8C%D1%81/.opencode/cowork-owned-runtime/skill.mjs",
+      {
+        "mcpUrl": "http://127.0.0.1:54295/mcp",
+        "skillRoots": [
+          "C:\\Users\\nsuho\\.local\\share\\bitrix24-cowork\\skills",
+          "C:\\Users\\nsuho\\.local\\share\\bitrix24-cowork\\skills-code",
+          "C:\\Users\\nsuho\\AppData\\Roaming\\com.bitrixsoft.cowork\\extensions\\artifacts\\bd1b9c2b-8574-4ad7-b4f0-7d2367bf8e19\\1.0.2\\5f3a746bf1c43124ac78d770fdc9a9d5048e0b949a23032992b9d1577df4ca84\\skills"
+        ]
+      }
+    ]
+  ],
+  "agent": {
+    "code": {
+      "tools": {
+        "memory_*": true,
+        "b24-cowork-memory_*": false
+      },
+      "permission": {
+        "memory_*": "allow",
+        "b24-cowork-memory_*": "deny"
+      }
+    },
+    "b24cowork": {
+      "tools": {
+        "memory_*": false,
+        "b24-cowork-memory_*": true
+      },
+      "permission": {
+        "memory_*": "deny",
+        "b24-cowork-memory_*": "allow"
+      }
+    }
+  }
+}

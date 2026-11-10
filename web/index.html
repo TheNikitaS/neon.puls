@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>НЕОН.ПУЛЬС — аналитика эффективности офлайн-бизнеса</title>
+  <meta name="description" content="AI-платформа аналитики эффективности офлайн-бизнеса: трафик, внимание, посещаемость, продажи и рекомендации по каждой точке." />
+  <link rel="stylesheet" href="/assets/css/app.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div id="app" class="app" hidden>
+    <aside class="rail">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M3 22 L9 10 L15 22 L21 6 L29 22" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <strong>НЕОН<span>.</span>ПУЛЬС</strong>
+          <small>revenue intelligence</small>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <a href="#/dashboard" data-route="dashboard"><span class="nav-ico">◧</span>Главная</a>
+        <a href="#/analytics" data-route="analytics"><span class="nav-ico">◔</span>Аналитика</a>
+        <a href="#/locations" data-route="locations"><span class="nav-ico">◈</span>Торговые точки</a>
+        <a href="#/ai" data-route="ai"><span class="nav-ico">✦</span>AI-аналитик</a>
+        <a href="#/compare" data-route="compare"><span class="nav-ico">⇄</span>Сравнение</a>
+        <a href="#/reports" data-route="reports"><span class="nav-ico">▤</span>Отчёты</a>
+        <a href="#/integrations" data-route="integrations"><span class="nav-ico">⌁</span>Интеграции</a>
+        <a href="#/notifications" data-route="notifications"><span class="nav-ico">◉</span>Уведомления<span class="badge" id="nav-badge" hidden>0</span></a>
+        <a href="#/settings" data-route="settings"><span class="nav-ico">⚙</span>Настройки</a>
+        <a href="#/admin" data-route="admin" id="nav-admin" hidden><span class="nav-ico">⌘</span>Платформа</a>
+      </nav>
+
+      <div class="rail-foot">
+        <div class="org-chip" id="org-chip">
+          <span class="org-dot"></span>
+          <div>
+            <strong id="org-name">—</strong>
+            <small id="org-role">—</small>
+          </div>
+        </div>
+        <button class="ghost-btn" id="logout">Выйти</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-title">
+          <h1 id="page-title">Главная</h1>
+          <p id="page-sub">Сводка по сети</p>
+        </div>
+        <div class="topbar-controls">
+          <div class="segmented" id="period-switch">
+            <button data-days="7">7д</button>
+            <button data-days="28" class="active">28д</button>
+            <button data-days="90">90д</button>
+          </div>
+          <select id="location-filter" class="select" aria-label="Точка">
+            <option value="">Вся сеть</option>
+          </select>
+          <button class="icon-btn" id="refresh" title="Обновить">⟳</button>
+        </div>
+      </header>
+      <div id="view" class="view"></div>
+    </main>
+  </div>
+
+  <div id="auth" class="auth" hidden></div>
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root"></div>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/charts.js"></script>
+  <script src="/assets/js/ui.js"></script>
+  <script src="/assets/js/views.js"></script>
+  <script src="/assets/js/views-extra.js"></script>
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+[Unit]
+Description=NEON.PULSE — AI analytics platform
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+User=neonpulse
+Group=neonpulse
+WorkingDirectory=/opt/neonpulse
+EnvironmentFile=/etc/neonpulse.env
+ExecStart=/opt/neonpulse/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8010 --workers 2
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
